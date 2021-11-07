@@ -1,5 +1,6 @@
 package com.bridgelabz.springrestapidemo.controller;
 
+import com.bridgelabz.springrestapidemo.model.User;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -20,4 +21,10 @@ public class HelloRestController {
     public String HelloPath(@PathVariable("name") String name) {
         return "Hello " + name;
     }
+
+    @PostMapping("/post")
+    public String postName(@RequestBody User user) {
+        return "Hello " + user.getFirstName() + " " + user.getLastName();
+    }
+
  }
